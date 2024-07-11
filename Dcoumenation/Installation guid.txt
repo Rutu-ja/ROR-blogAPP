@@ -1,0 +1,33 @@
+# For installing rails, prerequisites are ruby and SQLite3
+
+
+# Install ruby on Ubuntu 
+
+    - sudo apt update
+    - sudo apt-get install ruby-full
+    - ruby -v (check version)
+
+# Install SQLite3 database 
+
+    - sudo apt update 
+    - sudo apt install sqlite3
+    - sqlite3 --version
+
+# Install rails 
+
+    - sudo gem install rails
+    - rails -v
+
+# Create a new project 
+
+    - rails new blog
+    - cd blog
+    - bin/rails server
+
+## references :
+    # Rails documentation: https://guides.rubyonrails.org/getting_started.html
+    # Ruby documentation: https://www.ruby-lang.org/en/documentation/installation/#apt
+    # Installation guide: https://www.youtube.com/watch?v=s3NPu9FVDMU
+
+
+
