@@ -1,0 +1,65 @@
+Model-View-Controller (MVC) is a design pattern that separates an application into three interconnected components:
+
+Model:
+    -Manages the data, logic, and rules of the application.
+    -Responsible for interacting with the database and handling business logic.
+    -In Rails, models are typically ActiveRecord classes that represent database tables.
+    Examples in Rails:
+    -ActiveRecord models.
+    -Validations, associations, and scopes.
+    -Example: app/models/user.rb.
+
+View:
+    -Handles the presentation layer.
+    -Responsible for displaying data to the user.
+    -In Rails, views are usually HTML templates combined with embedded Ruby (ERB) or other templating systems.
+    Examples in Rails:
+    -ERB (Embedded Ruby) templates.
+    -HAML or Slim templates.
+    -Example: app/views/users/show.html.erb.
+
+Controller:
+    -Acts as an intermediary between models and views.
+    -Processes incoming requests, interacts with the model, and renders the appropriate view.
+    -In Rails, controllers are Ruby classes that inherit from ActionController::Base.
+    Examples in Rails:
+    -Controller actions (methods inside controllers).
+    -Filters and handlers.
+    -Example: app/controllers/users_controller.rb.
+
+Flow of Data in MVC
+
+    -User Interaction: The user interacts with the view (e.g., by clicking a link or submitting a form).
+    -Request Handling: The controller receives the request and processes it.
+    -Model Interaction: The controller interacts with the model to retrieve or manipulate data.
+    -Response Generation: The controller selects the appropriate view to display the data.
+    -View Rendering: The view renders the data and sends it back to the user.
+
+Diagram of MVC Architecture
+
+        +---------+        +-------------+
+        |  User   |------->|   Request   |
+        +---------+        +-------------+
+              ^                   |
+              |                   |
+              |                   v
+       +------+-----+      +-------------+
+       |   View     |<---->|  Controller |
+       +------------+      +-------------+
+              ^                   |
+              |                   |
+              |                   v
+       +------+-----+      +-------------+
+       |  Rendered  |<-----|   Model     |
+       |   View     |      +-------------+
+       +------------+
+
+In this diagram:
+
+-The user sends a request which is handled by the controller.
+-The controller interacts with the model to retrieve or update data.
+-The model sends the data back to the controller.
+-The controller passes the data to the view.
+-The view renders the data and sends it back to the user as a response.
+
+![image-mvc](image.png)
