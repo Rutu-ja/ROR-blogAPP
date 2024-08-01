@@ -1,23 +1,21 @@
+# app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
   def new
   end
 
   def create
-    email = params[:email].downcase
-    password = params[:password]
-    user = User.find_by(email: email)
-    
-    if user && user.authenticate(password)
-      log_in user
-      redirect_to root_path  # Redirect to the root path after successful login
+    user = User.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to root_path, notice: 'Logged in successfully'
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      flash.now[:alert] = 'Invalid email or password'
+      render :new
     end
   end
 
   def destroy
-    log_out if logged_in?
-    redirect_to root_url
+    session[:user_id] = nil
+    redirect_to root_path, notice: 'Logged out successfully'
   end
 end
