@@ -1,0 +1,36 @@
+/* app/assets/stylesheets/home.css */
+.post {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .post h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .post p {
+    font-size: 16px;
+  }
+  
+  .post a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .post a:hover {
+    text-decoration: underline;
+  }
+  
+  .post .timestamp {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .post .author {
+    font-size: 14px;
+    color: #007bff;
+  }

@@ -1,0 +1,10 @@
+<!-- app/views/posts/show.html.erb -->
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<% if logged_in? && @post.user == current_user %>
+  <%= link_to 'Edit Post', edit_post_path(@post), class: 'btn btn-primary' %> |
+  <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+<% else %>
+  <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+<% end %>
